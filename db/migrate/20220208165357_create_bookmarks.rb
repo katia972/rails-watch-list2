@@ -4,6 +4,8 @@ class CreateBookmarks < ActiveRecord::Migration[6.0]
       t.text :comment
 
       t.timestamps
+      t.references :movie
+      t.references :list
     end
   end
 end

@@ -1,0 +1,42 @@
+<div class="banner-list" style="background-image: linear-gradient(rgba(249, 203, 156, 0.3),rgba(246, 176, 0, 0.5)),
+  url(https://tse4.mm.bing.net/th?id=OIP.ViJx0s-dMGRegNzSM64d3QHaEL&pid=Api&P=0&w=302&h=170);">
+  <div class="container py-5">
+    <div class="row">
+      <div class="col-12 col-md-6 offset-lg-3">
+        <h1> Liste de mes films et son aperçu</h1>
+        <div class="list-show-card">
+        <h3>Ma selection</h3>
+    </div>
+  </div>
+</div>
+
+<nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+  <%# <input data-turbo="false" class="btn btn-dark w-100" type="submit" value=""> %>
+  <%= link_to "ajouter un film",  new_list_bookmark_path(@list), class: "btn btn-primary padding: 5px 1rem m-l" %>
+    <%# <button class="btn btn-outline-success p-1 m-l" type=".btn-normal"> Ajouter </button> %>
+    <%# <button class="btn btn-sm btn-outline-secondary" type=".btn-normal"> supprimer</button> %>
+  </form>
+</nav>
+
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-6 col-m-4 mt-3">
+      <div class="card-group mb-4 ">.
+      <% @list.movies.each do |movie| %>
+        <div class="card movie ">
+          <img class="card-img-top" src="<%= movie.poster_url%>" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"><%= movie.title %></h5>
+            <p class="card-text"><%= movie.overview %></p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">Last  3 mins ago</small>
+          </div>
+
+        </div>
+        <% end %>
+      </div>
+    </div>
+   </div>
+</div>
